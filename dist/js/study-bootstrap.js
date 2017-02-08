@@ -131,6 +131,7 @@ if (typeof jQuery === 'undefined') {
 
     // 首先判断支持transition，在transition.js文件中重写了jquery自带的
     // support.transition属性，因为这个特性可能在新版本jquery中移除
+    // 如果禁用了过渡效果，那就直接移除元素了
     $.support.transition && $parent.hasClass( 'fade' ) ?
       $parent
         // bsTransitionEnd事件发生后，移除元素

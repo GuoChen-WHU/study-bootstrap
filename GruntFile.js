@@ -66,7 +66,7 @@ module.exports = function ( grunt ) {
         },
         src: 'less/bootstrap.less',
         dest: 'dist/css/<%= pkg.name %>.css'
-      },
+      }/*,
       compileTheme: {
         options: {
           strictMath: true,
@@ -77,7 +77,7 @@ module.exports = function ( grunt ) {
         },
         src: 'less/theme.less',
         dest: 'dist/css/<%= pkg.name %>-theme.css'
-      }
+      }*/
     },
 
     autoprefixer: {
@@ -89,13 +89,13 @@ module.exports = function ( grunt ) {
           map: true
         },
         src: 'dist/css/<%= pkg.name %>.css'
-      },
+      }/*,
       theme: {
         options: {
           map: true
         },
         src: 'dist/css/<%= pkg.name %>-theme.css'
-      }
+      }*/
     },
 
     csslint: {
@@ -103,8 +103,8 @@ module.exports = function ( grunt ) {
         csslintrc: 'less/.csslintrc'
       },
       dist: [
-        'dist/css/<%= pkg.name %>.css',
-        'dist/css/<%= pkg.name %>-theme.css'
+        'dist/css/<%= pkg.name %>.css'/*,
+        'dist/css/<%= pkg.name %>-theme.css'*/
       ]
     },
 
@@ -119,7 +119,7 @@ module.exports = function ( grunt ) {
       },
       less: {
         files: 'less/**/*.less',
-        tasks: 'less'
+        tasks: ['less', 'autoprefixer', 'csslint']
       }
     }
 
