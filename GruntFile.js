@@ -49,7 +49,10 @@ module.exports = function ( grunt ) {
         src: [
           'js/transition.js',
           'js/alert.js',
-          'js/button.js'
+          'js/button.js',
+          'js/carousel.js',
+          'js/collapse.js',
+          'js/affix.js'
         ],
         dest: 'dist/js/<%= pkg.name %>.js'
       }

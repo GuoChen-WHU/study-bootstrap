@@ -48,7 +48,9 @@
     if (startEvent.isDefaultPrevented()) return;
 
     if (actives && actives.length) {
+      /* jshint ignore:start */
       Plugin.call(actives, 'hide');
+      /* jshint ignore:end */
       activesData || actives.data('bs.collapse', null);
     }
 
@@ -126,6 +128,7 @@
   };
 
   // 不只返回parent，还添加了Aria相关和collapsed类
+  /* jshint ignore:start */
   Collapse.prototype.getParent = function () {
     return $(this.options.parent)
       .find('[data-toggle="collapse"][data-parent="' + this.options.parent + '"]')
@@ -135,6 +138,7 @@
       }, this))
       .end(); // 回到find之前的集合，即parent
   };
+  /* jshint ignore:end */
 
   Collapse.prototype.addAriaAndCollapsedClass = function ($element, $trigger) {
     var isOpen = $element.hasClass('in');

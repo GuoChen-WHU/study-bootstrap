@@ -1,0 +1,19 @@
+// Clearfix
+//
+// 针对现代浏览器的方案
+// 1. content内的空格是避免Opera bug(当文档中有contenteditable属性
+//    出现的时候，.clearfix元素的上下会出现空白)的一种方案
+// 2. 使用table而不是block，只在使用:before来避免子元素上外边距塌陷
+//    时必要
+
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
