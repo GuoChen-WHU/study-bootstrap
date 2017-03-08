@@ -7,6 +7,8 @@
 // We don't use the `.opacity()` mixin here since it causes a bug with text
 // fields in IE7-8. Source: https://github.com/twbs/bootstrap/pull/3552.
 
+// 淡入淡出效果,很多组件用到
+// 组件显示时由.fade 变为.fade.in
 .fade {
   opacity: 0;
   transition: opacity .15s linear;
